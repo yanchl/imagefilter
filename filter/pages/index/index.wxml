@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="top container">
+    <image class="img" src="/images/image.jpg"/>
+    <image class="img" src="/images/image.jpg"
+        style="filter: grayscale({{values[0].value}}) sepia({{values[1].value}}) saturate({{values[2].value}}) hue-rotate({{values[3].value}}deg) invert({{values[4].value}}) opacity({{values[5].value}}) brightness({{values[6].value}}) contrast({{values[7].value}}) blur({{values[8].value}}px)"/>
+    <image class="img" src="{{remoteimg}}" bindload='loadsuccess' binderror="loaderror"/>
+</view>
+<view class="center container">
+    <text>{{valueTxt}}</text>
+    <view class="center_item_btns">
+        <button class="btn" bindtap="reset" >重置</button>
+        <button class="btn" type="primary" bindtap="submit">提交</button>
+    </view>
+</view>
+
+<view class="bottom container">
+    <block wx:for="{{list}}" wx:key="{{*this}}">
+        <view class="bottom_item container" wx:if="{{index != 3}}">
+            <view class="bottom_item_txt">{{item.zh}}({{item.en}})</view>
+            <slider class="bottom_item_flex" bindchange="slider4change" min="0" step= "0.01" max="1" value="{{item.defvalue}}" data-index="{{index}}"/>
+        </view>
+    </block>
+</view>

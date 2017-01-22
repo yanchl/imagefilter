@@ -1,0 +1,32 @@
+/**index.wxss**/
+.bottom_item_flex {
+    flex: 1;
+}
+
+.bottom {
+  flex-direction: column;
+}
+.center {
+    flex-direction: column;
+}
+.center_item_btns{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+.btn{
+    flex: 1;
+    margin: 10rpx;
+}
+
+.bottom_item {
+  padding: 0;
+}
+
+.bottom_item_txt {
+  width: 5em;
+  overflow:hidden;
+  text-overflow:clip;
+  white-space : nowrap
+}
